@@ -14,10 +14,10 @@ export default function Home() {
         setSubmitMessage('');
 
         emailjs.sendForm(
-            'service_jr8ahks',      // Replace with your Service ID
-            'template_vdysja9',     // Replace with your Template ID
+            'service_jr8ahks',
+            'template_vdysja9',
             form.current,
-            'YegvGYsoIIooUu7fc'       // Replace with your Public Key
+            'YegvGYsoIIooUu7fc'
         )
             .then((result) => {
                 console.log(result.text);
@@ -34,86 +34,51 @@ export default function Home() {
         <div>
 
             {/* Hero Section */}
-            <section id="home" style={{
-                minHeight: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0 24px',
-                backgroundColor: '#F9FAF8'
-            }}>
-                <div style={{
-                    maxWidth: '1152px',
-                    width: '100%',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '48px',
-                    alignItems: 'center'
-                }}>
+            <section id="home" className="hero-section">
+                <div className='hero-box'>
 
                     {/* Left - Profile Photo */}
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <div style={{
-                            width: '380px',
-                            height: '380px',
-                            borderRadius: '50%',
-                            overflow: 'hidden'
-                        }}
-                        >
+                        <div className='hero-left'>
                             <img
                                 src={profilePhoto}
                                 alt="Your Name"
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover'
-                                }}
+                                className='hero-img'
                             />
                         </div>
                     </div>
 
                     {/* Right - Text Content */}
-                    <div style={{ textAlign: 'left' }}>
-                        <h1 style={{
-                            fontSize: '48px',
-                            fontWeight: 'bold',
-                            color: '#2C2C2C',
-                            marginBottom: '16px'
-                        }}>
+                    <div className='hero-right'>
+                        <h1 className='hero-header'>
                             Caleb Studdie
                         </h1>
-                        <p style={{
-                            fontSize: '24px',
-                            color: '#7A9B76',
-                            fontWeight: '500',
-                            marginBottom: '24px'
-                        }}>
+                        <p className='hero-sub'>
                             Full-Stack Developer & Cybersecurity Enthusiast
                         </p>
-                        <p style={{
-                            fontSize: '18px',
-                            color: '#2C2C2C',
-                            opacity: '0.8',
-                            marginBottom: '32px',
-                            maxWidth: '600px'
-                        }}>
-                            Brief introduction about yourself goes here.One or two sentences describing
+                        <p className='hero-description'>
+                            Brief introduction about yourself goes here. One or two sentences describing
                             your passion, your skills, and what makes you unique.
                         </p>
 
                         {/* Social Links */}
-                        <div style={{
-                            display: 'flex',
-                            gap: '24px',
-                            fontSize: '18px'
-                        }}>
-                            <a href="#" className='social-link'>
+                        <div className='hero-social-container'>
+                            <a href="https://github.com/cstuddie"
+                                className='social-link'
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 GitHub
                             </a>
-                            <a href="#" className='social-link'>
+                            <a href="https://www.linkedin.com/in/caleb-studdie/"
+                                className='social-link'
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 LinkedIn
                             </a>
-                            <a href="#" className='social-link'>
+                            <a href="mailto:calebstuddie@gmail.com"
+                                className='social-link'
+                            >
                                 Email
                             </a>
                         </div>
@@ -125,8 +90,65 @@ export default function Home() {
 
             <section id="about" className="preview-section">
                 <div className="preview-box">
-                    <h2 className="preview-header">About</h2>
-                    <p className="preview-text">Learn more about me</p>
+                    <h2 className="preview-header">About Me</h2>
+                    <p className="preview-text">Get to know me beyond the code</p>
+
+                    <div className="about-content">
+
+                        {/* Introduction */}
+                        <p className="about-intro">
+                            Hi! I'm Caleb, a Software Engineering student and full-stack developer
+                            passionate about building secure, user-friendly web applications that solve
+                            real-world problems.
+                        </p>
+
+                        {/* My Journey */}
+                        <div>
+                            <h3 className="about-section-title">My Journey</h3>
+                            <p className="about-paragraph">
+                                I discovered my love for coding when I got to college. I chose Software
+                                Engineering because I wanted a challenge, but I soon fell in love with it
+                                after building my first application — an E-Commerce Platform. Since then,
+                                I've been dedicated to learning and growing as a developer, focusing on
+                                creating clean, efficient code, and staying up-to-date with the latest
+                                technologies.
+                            </p>
+                        </div>
+
+
+                        {/* What I Do */}
+                        <div>
+                            <h3 className="about-section-title">What I Do</h3>
+                            <p className="about-paragraph">
+                                I specialize in building modern web applications using React, Node.js, and
+                                other cutting-edge technologies. I'm particularly interested in cybersecurity
+                                and ensuring that the applications I build are not just functional, but also
+                                secure.
+                            </p>
+                        </div>
+
+
+                        {/* Beyond Code */}
+                        <div>
+                            <h3 className="about-section-title">Beyond Code</h3>
+                            <p className="about-paragraph">
+                                When I'm not coding, you can find me singing, leading a music rehearsal, or
+                                playing piano. I've been part of a student-led a cappella group at MSU called
+                                TrebullDawgs for two years, and I had the honor of serving as Music Director
+                                this past year. In addition, I serve as the Music Director and Lead Pianist
+                                at Starkville Church of God, where I ensure smooth collaboration and execution
+                                with our musicians. I believe that these experiences outside of tech help me
+                                bring fresh perspectives to problem-solving and collaboration.
+                            </p>
+                        </div>
+
+                        {/* Call to Action */}
+                        <p className="about-cta">
+                            I'm always excited to connect with other developers and explore new
+                            opportunities. Feel free to reach out if you would like to collaborate
+                            or just chat about tech!
+                        </p>
+                    </div>
                 </div>
             </section>
             <section id="projects" className="preview-section">
